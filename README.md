@@ -1,6 +1,6 @@
 # MyRandi | Football possession from tactical tracking
 
-![MyRandi submission for More Than a Hack 2027: tracking, temporal evidence and possession spells](assets/submission-banner.png)
+![Football pitch with abstract player tracking and possession paths](assets/submission-banner.png)
 
 <p align="center"><strong>More Than a Hack 2027 · Phase 1</strong><br/>Frame-level possession for FC Barcelona vs Athletic Club</p>
 
@@ -158,11 +158,11 @@ If execution cannot locate the data, check that `MTAH_DATA_DIR` points to the di
 
 | Dataset | Scale | Labels and use |
 | --- | --- | --- |
-| DFL/Sportec IDSSE | Seven German league matches | Provider ball status and possession fields support model fitting and match-level development |
-| Metrica Sports sample data | Three anonymised matches | Analyst event logs supply the events used to derive possession and stoppage targets |
+| DFL/Sportec IDSSE | Seven German league matches; 1,002,644 labelled H/A/D frames | Provider ball status and possession fields support model fitting and match-level development |
+| Metrica Sports sample data | Three anonymised matches; 424,975 labelled H/A/D frames | Analyst event logs supply the events used to derive possession and stoppage targets |
 | SkillCorner Open Data | Twenty A-League matches | Provider phases of play supply a cross-provider development check that informed the final ensemble |
 
-The shipped weights were fitted on the ten DFL/Sportec and Metrica matches, comprising approximately 1.43 million labelled frames before augmentation. Each training match has two seeded corruption draws. Augmentation introduces state-dependent ball dropout, missing players, duplicate tracks and team-identity errors.
+The shipped weights were fitted on the ten DFL/Sportec and Metrica matches, comprising 1,427,619 labelled H/A/D frames before augmentation (approximately 1.43 million). These counts exclude `X` and do not multiply repeated windows. Each training match has two seeded corruption draws. Augmentation introduces state-dependent ball dropout, missing players, duplicate tracks and team-identity errors.
 
 We apply a one-second heuristic to external labels to approximate controlled possession. A brief opposing spell is assigned to the preceding team when that team immediately regains the ball or play stops. Short spells following a restart are retained. This is an implementation choice within the external-label preparation.
 
