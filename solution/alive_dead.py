@@ -1,10 +1,9 @@
-"""Ball alive / dead, learned without labels.
+"""Segmentation utilities and experimental unsupervised status modelling.
 
-A two-state hidden Markov model over a handful of discretised physical features. Emissions are
-independent categorical distributions per feature (a "missing" bin is just another category, so
-the 41% of frames without a ball are handled naturally). Parameters are fitted by Baum-Welch on
-the graded frames of this match only; no label of any kind enters the fit. The state with the
-lower collective player speed is called "dead".
+The release decoder uses segments_from_mask to form contiguous intervals. Its live/dead
+probabilities come from the packaged, externally trained tree and GRU models. The HMM fitting
+functions in this module are retained from earlier experiments and are not called by the
+submission entry point.
 """
 import numpy as np
 from scipy.ndimage import uniform_filter1d, maximum_filter1d, minimum_filter1d

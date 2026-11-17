@@ -1,11 +1,10 @@
-"""Which team is in possession while the ball is alive.
+"""Tracking-derived control features and home/away sequence decoding.
 
-Possession only changes when the other team gains *control*, which we read from the tracking as a
-control event: a run of frames in which one team's nearest player is within reach of the ball,
-clearly closer than any opponent, and the ball is moving at a carryable speed. Touches that are too
-short to be control (deflections, a foot through a passing ball) do not flip possession unless the
-same team touches the ball again straight after -- the "two consecutive actions" proxy from the
-challenge definition.
+The release uses local geometric control proxies as model features and viterbi_team to decode
+externally trained ownership probabilities. In the release configuration, direct control,
+shape and event contributions to the decoder have zero weight; supervised ownership evidence
+and the transition penalty determine the path. Other event-based combinations are retained
+for experimental comparisons.
 """
 import numpy as np
 

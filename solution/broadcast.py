@@ -1,23 +1,8 @@
-"""Put the broadcast recording on the tactical timeline.
+"""Experimental cross-camera alignment and camera-state helpers.
 
-The broadcast tracking uses the same normalised pitch coordinates as the tactical tracking, but its
-own frame counter, with cuts, replays and close-ups. It is a live feed, so each half is the tactical
-timeline plus a (nearly) constant offset. Everything below is found from the data:
-
-  1. coarse offsets   per 100 s window, the shift that best overlays the two ball tracks (FFT
-                      cross-correlation); windows that agree form one span per half
-  2. fine mapping     per 5 s window, the shift (+-OFFSET_SEARCH frames) that best overlays the two
-                      sets of players; a robust straight line through those shifts per span
-  3. camera state     each broadcast frame is LIVE if its players sit on the tactical players at
-                      the mapped frame, NO_MATCH if it has a pitch homography but shows something
-                      else (a replay or a tight close-up), CUT if it has no usable homography
-                      (replays, close-ups, crowd shots)
-
-TV directors cut away from live play mostly when the ball is dead, so the camera state is an
-independent cue for the alive/dead model. The broadcast ball is kept too, but only on LIVE frames.
-
-Output on the tactical timeline: `cam` (-1 not covered, CUT, NO_MATCH, LIVE) and `ball` (NaN unless
-the broadcast saw the ball on a LIVE frame).
+These functions investigate mapping broadcast observations onto the tactical timeline using
+ball and player geometry. They are retained for the documented camera-cue experiments.
+Release inference reads tactical ATD only and does not call this module.
 """
 import os
 import sys

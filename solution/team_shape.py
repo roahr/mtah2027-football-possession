@@ -1,14 +1,9 @@
-"""Self-supervised team-in-possession classifier from collective shape.
+"""Collective-team geometry for the externally trained possession models.
 
-When the ball is missing -- 41% of graded frames -- the players still tell you who has it: the
-team in possession spreads out and pushes up, the other one compacts and drops. We learn that
-mapping on this match without any human label: the pseudo-labels are the frames where our own
-control-event state machine is confident (a confirmed control event nearby, away from any
-change of possession), and predictions are cross-fitted over contiguous time blocks so no frame is
-scored by a model that saw it.
-
-The features deliberately exclude ball-to-player distances, so this evidence is independent of the
-control events it is later combined with.
+The release uses shape_features and attack_sign to derive deterministic team-position and
+movement features. These features feed the packaged ownership models. The pseudo-label and
+cross-fitting functions below describe a separate experimental classifier; that classifier
+is not fitted or used by the submission entry point.
 """
 import numpy as np
 from scipy.ndimage import uniform_filter1d

@@ -1,12 +1,7 @@
-"""Snap HMM dead-ball boundaries to the physical event that causes them.
+"""Optional physical-boundary and restart-refinement experiments.
 
-The HMM works on >= 1 s smoothed movement features, so its boundaries lag the
-real event by 1-4 s. Two events are directly visible in the tracking data:
-
-* the ball crossing a line  -> the stoppage starts there;
-* a restart kick: the ball, until then still/missing/at a player's feet, is
-  moving away from the nearest player and is more than SEPARATION metres from
-  them -> play resumes there.
+The helpers detect line crossings and restart movement in tracking. The release decoder sets
+refine=False and kickoffs=False, so these refinements are disabled for the submitted file.
 """
 import numpy as np
 

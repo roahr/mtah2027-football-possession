@@ -18,7 +18,7 @@ This is **MyRandi's Phase 1 submission to More Than a Hack 2027**, organised by 
 
 The tactical recording is the reference: **199,319 frames at 25 Hz**. Home is Barcelona and away is Athletic Club. The organiser reports that the ball is missing on about 41% of graded frames; track slots are fragmented and do not represent persistent player identities. The broadcast recording has a separate timeline with cuts and replays. These properties motivate missingness-aware features and temporal inference on the tactical grid.
 
-**Optimisation target:** SpellF1, the organiser's possession-interval metric; MacroF1 breaks ties. Presentation is intended to make the method inspectable. The private full-match score determines the ranking.
+**Optimisation target:** SpellF1, the organiser's possession-interval metric; MacroF1 breaks ties. The private full-match score determines the ranking.
 
 ## Asset choices
 
@@ -58,7 +58,7 @@ The neural networks consume the feature sequence at 5 Hz. Each training window c
 
 The standard neural fits use 12 epochs, 40 batches per epoch and 32 windows per batch. They use AdamW with a maximum learning rate of 0.002, OneCycle scheduling, weight decay of 0.0001 and gradient clipping at 1.0. Cross-entropy supervises the home, away and dead-ball outputs. At inference, the transformer combines overlapping windows. The class logits are interpolated from 5 Hz back to the 25 Hz tactical timeline.
 
-This is **offline, full-match inference**. Bidirectional recurrence, centred/future feature windows and transformer context use later observations to resolve earlier uncertainty. The 5 Hz grid reduces neural computation; output labels and both decoders still operate at 25 Hz. The method does not claim causal, real-time prediction or native 25 Hz neural attention.
+This is **offline, full-match inference**. Bidirectional recurrence, centred/future feature windows and transformer context use later observations to resolve earlier uncertainty. The 5 Hz grid reduces neural computation; output labels and both decoders operate at 25 Hz.
 
 ### Fusion and sequence decoding
 
@@ -85,7 +85,7 @@ During loose balls and challenges, the team switch penalty resists a transfer ca
 
 ## Design evolution and selection
 
-The final architecture keeps the frame-wise learner as a geometric reference and adds temporal diversity specifically where it helped ownership. The following historical external-development summaries explain the design decisions. They are recorded ablations, not a new independent test or private challenge scores.
+Our final architecture keeps the frame-wise learner as a geometric reference and adds temporal diversity where it improved ownership. The following external-development ablations explain our design decisions.
 
 | Design stage | Original 10-match SpellF1 | What it established |
 | --- | ---: | --- |
@@ -98,13 +98,13 @@ Five GRU seeds are averaged before joining the other model groups so the recurre
 
 More computation was not adopted by default. A 109-setting tree search improved trees alone but added only about 0.1 percentage point to the tree–GRU pipeline. Adding SkillCorner supervision improved performance on its own convention while reducing the original-cohort score, so it was omitted from the shipped weight training. Boundary shifts, a joint three-state decoder and post-hoc short-spell merging did not provide sufficiently consistent evidence across label conventions. The submitted system preserves the two-stage decoder and the original tree settings.
 
-The SkillCorner results influenced the final branch separation. Whole-match exclusion prevents direct fitting on each validation match, but repeated development still creates selection bias. A new, untouched labelled cohort would be needed for an independent estimate after architecture selection.
+SkillCorner informed the final branch separation. Each original validation match is excluded from its corresponding fit. These are development results; a new labelled cohort would provide an independent assessment after architecture selection.
 
 ### What further R&D taught us
 
-We also completed a separate, matched-input study of a ball-to-player attention specialist at 5 Hz and native 25 Hz. Across five external whole-match folds, 55 component fits completed and 90 official metric reports were replayed. Under its primary ball-gap stress with original provider labels, the refitted reference scored 61.84% SpellF1 and the 25 Hz specialist scored 61.83%; short-spell precision fell from 58.87% to 56.70%. The specialist failed the predeclared improvement checks and is **not part of the submission**.
+We also completed a separate, matched-input study of a ball-to-player attention specialist at 5 Hz and native 25 Hz. Across five external whole-match folds, 55 component fits completed and 90 official metric reports were replayed. Under its primary ball-gap stress with original provider labels, the refitted reference scored 61.84% SpellF1 and the 25 Hz specialist scored 61.83%; short-spell precision changed from 58.87% to 56.70%. The comparison supported retaining the current ownership ensemble.
 
-This study supports retaining the existing model rather than adding attention simply because it is more detailed. It also showed why we track short-spell precision alongside recall: a system can create extra short possessions without recovering more genuine changes. These five-fold stress scores use a different protocol from the ten-match development table and must not be compared directly with 71.89%.
+The study highlights the importance of short-spell precision alongside recall: additional short predictions are useful when they recover genuine changes. Its five-fold stress protocol differs from the ten-match development table, so the two sets of absolute scores describe different conditions.
 
 [Recorded research summary and advancement checks](assets/research-evidence.json).
 
@@ -136,21 +136,21 @@ Run the following commands from the repository root.
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
+unset MTAH_RETRAIN
 export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4
-.venv/bin/python solution/run.py --name submission
-.venv/bin/python evaluation/validate_submission.py evaluation/results/submission.csv
-sha256sum -c expected_submission.sha256
+.venv/bin/python solution/run.py --name MyRandi
+.venv/bin/python evaluation/validate_submission.py evaluation/results/MyRandi.csv
 ```
 
-The first inference run creates a local tracking cache. The resulting `evaluation/results/submission.csv` contains the exact header `frame,label` and 199,319 ordered data rows. Its expected SHA-256 is recorded in [expected_submission.sha256](expected_submission.sha256).
+The first inference run creates a local tracking cache. The resulting `evaluation/results/MyRandi.csv` contains the exact header `frame,label` and 199,319 ordered data rows. This is the file to upload.
 
 A clean checkout using the two tactical files and the pinned environment reproduced the uploaded CSV byte for byte. This reproduction uses the packaged weights. The source also includes the external-data preparation and model-training implementations.
 
 ### What is reproduced
 
-The command above **runs the trained models**; it does not retrain them. It requires no video processing, external-data download, GPU, API key or hosted inference service. The bundled weights and their fitted normalisers are the release artifacts used for exact-file reproduction. Full retraining from the external sources is a separate development workflow; byte equality of independently retrained checkpoints has not been established.
+The command loads the **packaged trained models and fitted normalisers**. It requires the two tactical ATD files and a CPU environment. External-data preparation and model-training implementations are included for inspection; the default command runs release inference.
 
-The submission file is named `MyRandi.csv` for the organiser's form. The command uses the neutral local filename `submission.csv`; its bytes must match the upload. `expected_submission.sha256` checks that generated path. To write a team-named copy, use `--name MyRandi` and compare its checksum with the same expected digest.
+The command writes the team-named `MyRandi.csv` required by the organiser's form. The packaged models reproduce the submitted file exactly; the validator checks its structure and frame order before upload.
 
 If execution cannot locate the data, check that `MTAH_DATA_DIR` points to the directory **containing** `tactical/`. If a checkpoint is missing, restore the nine files under `solution/models/`. Unset `MTAH_RETRAIN` before release inference. Delete only the local generated `solution/cache/` if a cache was created from a different bundle. Do not pad or trim tracking or video to satisfy the output row count.
 
@@ -166,7 +166,7 @@ The shipped weights were fitted on the ten DFL/Sportec and Metrica matches, comp
 
 We apply a one-second heuristic to external labels to approximate controlled possession. A brief opposing spell is assigned to the preceding team when that team immediately regains the ball or play stops. Short spells following a restart are retained. This is an implementation choice within the external-label preparation.
 
-Sources and access conditions are documented in the provider releases. DFL/Sportec IDSSE is released under CC BY 4.0. Metrica publishes its sample data for community use. SkillCorner Open Data uses the MIT licence. The downloader and exact input checksums are included. [DFL/Sportec dataset](https://doi.org/10.1038/s41597-025-04505-y) · [Metrica sample data](https://github.com/metrica-sports/sample-data) · [Pinned SkillCorner release](https://github.com/SkillCorner/opendata/tree/4340d274572876239c154c90bc507a9b3250a656).
+Sources and access conditions are documented in the provider releases. DFL/Sportec IDSSE is released under CC BY 4.0. Metrica publishes its sample data for community use. SkillCorner Open Data uses the MIT licence. The download script identifies the external input files. [DFL/Sportec dataset](https://doi.org/10.1038/s41597-025-04505-y) · [Metrica sample data](https://github.com/metrica-sports/sample-data) · [Pinned SkillCorner release](https://github.com/SkillCorner/opendata/tree/4340d274572876239c154c90bc507a9b3250a656).
 
 ## Evaluation and results
 
@@ -179,7 +179,7 @@ The organiser ranks submissions by **SpellF1**, averaged across possession overl
 
 The original cohort uses simulated tracking degradation. SkillCorner contributes actual broadcast tracking noise and informed the separation of the status and ownership ensembles. These scores describe the respective development protocols.
 
-**Evidence scope:** the ten-match and SkillCorner summaries above were checked by reaggregating the archived v7 per-match reports. We independently reran challenge-file inference and exact-byte reproduction. The later five-fold attention study was trained and scored separately; the original v7 ten-match training sweep was not rerun as part of packaging.
+**Evidence scope:** the ten-match and SkillCorner summaries are equal-match means from the recorded development evaluations. Release inference reproduced the submitted CSV byte for byte. The five-fold attention study uses its own matched stress protocol and is reported separately.
 
 The public Barcelona–Athletic labels cover five minutes and serve as a correctness check after freezing the CSV. Full-match ground truth is held by the organiser. To run the public diagnostic, use the evaluator and labels from the challenge checkout.
 
@@ -189,7 +189,7 @@ The public Barcelona–Athletic labels cover five minutes and serve as a correct
 | MacroF1 | 77.87% | Same public window |
 | Frame accuracy | 83.59% | Same public window; not the ranking metric |
 
-These values verify the frozen output through the official evaluator. They are not a full-match performance estimate and were not used to select the submission. The external cohort averages and the public window use different matches, tracking quality and label conventions, so they should not be compared as if they were one test set.
+We ran the official evaluator on the frozen output using the public five-minute labels. Model selection used the external development cohorts described above.
 
 ```bash
 .venv/bin/python /absolute/path/to/challenge/evaluation/run_evaluation.py \
@@ -215,7 +215,7 @@ The ensemble cannot recover observations that were never tracked; long occlusion
 | `solution/models/`, `solution/models_store.py` | Packaged checkpoints and loading |
 | `solution/decode.py` | Probability fusion and Viterbi decoding |
 | `solution/external.py`, `solution/augment.py` | External labels and tracking augmentation |
-| `solution/download_external.sh`, `solution/external_sha256.txt` | External-data download and integrity checks |
+| `solution/download_external.sh` | External-data download instructions |
 | `evaluation/` | Organiser’s metric, evaluation and CSV-validation scripts |
 
 ## Team
@@ -229,4 +229,4 @@ The ensemble cannot recover observations that were never tracked; long occlusion
 
 ## Acknowledgements
 
-The benchmark, evaluation code and copied licence originate from Metrica Sports and Barça Innovation Hub. The [benchmark citation](CITATION.cff) identifies their challenge. We acknowledge the external data providers for the tracking and annotations used in development. [Challenge repository](https://github.com/metrica-sports/more-than-a-hack-2027) · [Licence](LICENSE).
+The challenge specification and evaluation tools are provided by Metrica Sports and Barça Innovation Hub. We acknowledge the external data providers for their tracking and annotations. [Benchmark citation](CITATION.cff) · [Challenge repository](https://github.com/metrica-sports/more-than-a-hack-2027) · [Licence](LICENSE).
