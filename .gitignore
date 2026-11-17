@@ -1,0 +1,17 @@
+data/
+solution/cache/
+evaluation/gt/
+evaluation/results/
+evaluation/reports/
+evaluation/scoreboard.csv
+reproduced/
+.venv/
+__pycache__/
+*.py[cod]
+*.csv
+*.xml
+*.mp4
+*.zip
+*.gzip
+*.npz
+*.npy

@@ -1,0 +1,50 @@
+{
+  "study": "Separate native ball-to-player attention comparison; not part of the submitted model",
+  "evaluation": "Five external whole-match folds; matched inputs; official possession metric; primary synthetic ball-gap stress; original provider labels",
+  "relationship_to_v7_scores": "Different training/evaluation protocol from the archived ten-match and SkillCorner development summaries. Do not compare absolute scores across these protocols.",
+  "completed_component_fits": 55,
+  "replayed_official_reports": 90,
+  "primary_condition": {
+    "v7": {
+      "spell_f1_mean": 0.618351129603087,
+      "macro_f1": 0.9018359080441309,
+      "accuracy": 0.9151070173476895,
+      "strict_f1": 0.48976995583078725,
+      "short_precision": 0.5887018193031144,
+      "short_recall": 0.18040655086267593,
+      "false_shorts": 13.2
+    },
+    "v7_5hz": {
+      "spell_f1_mean": 0.6190569454590001,
+      "macro_f1": 0.9019722643946032,
+      "accuracy": 0.9152354223326442,
+      "strict_f1": 0.49209439519169557,
+      "short_precision": 0.5673273655031164,
+      "short_recall": 0.18176760754179005,
+      "false_shorts": 14.2
+    },
+    "v7_25hz": {
+      "spell_f1_mean": 0.6182879196783115,
+      "macro_f1": 0.9019927500424687,
+      "accuracy": 0.915251233024471,
+      "strict_f1": 0.4925845142238816,
+      "short_precision": 0.5669823838938458,
+      "short_recall": 0.18176760754179005,
+      "false_shorts": 14.6
+    }
+  },
+  "advancement_checks": {
+    "native_spell_gain": false,
+    "matches_improved": false,
+    "full_rate_over_control": false,
+    "S0_short_precision": false,
+    "S0_spell_f1_mean": true,
+    "NAT_short_precision": false,
+    "NAT+P_short_precision": true,
+    "NAT+P_spell_f1_mean": true
+  },
+  "development_passed": false,
+  "decision": "Retain the existing submission; attention specialist not shipped",
+  "source_results_sha256": "b0f0b0cf041e996278bb8b0d49ed320e05dce4a39a8519cb89df832f0544e0ff",
+  "scope": "Aggregate other-match research diagnostics only; no challenge samples or private labels. This summary is evidence of the recorded comparison, not an executable training reproduction."
+}

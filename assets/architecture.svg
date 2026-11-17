@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg role="img" aria-label="Architecture of football possession inference" width="1960" height="1030" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1960 1030" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Football possession inference architecture</title>
+	<desc>Tactical features feed separate live/dead and ownership ensembles, followed by Viterbi decoding and a frame-level CSV.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1960" height="1030"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-1030)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="570" y="693" width="660" height="305" rx="16" ry="16" style="stroke: rgb(86%,89%,92%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="570" y="991" width="660" height="7" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,32%,64%); fill-rule: evenodd;"/>
+			<text x="592" y="956" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 25px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,1912) scale(1,-1)">Ball-in-play status</text>
+			<text x="592" y="926" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(33%,40%,47%); stroke:none;" transform="translate(0,1852) scale(1,-1)">Two sources of evidence</text>
+			<rect x="570" y="35" width="660" height="615" rx="16" ry="16" style="stroke: rgb(86%,89%,92%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="570" y="643" width="660" height="7" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,32%,64%); fill-rule: evenodd;"/>
+			<text x="592" y="608" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 25px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,1216) scale(1,-1)">Team possession during live play</text>
+			<text x="592" y="578" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(33%,40%,47%); stroke:none;" transform="translate(0,1156) scale(1,-1)">Five groups with equal weight</text>
+			<rect x="1262" y="35" width="365" height="963" rx="16" ry="16" style="stroke: rgb(86%,89%,92%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="1262" y="991" width="365" height="7" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(68%,45%,10%); fill-rule: evenodd;"/>
+			<text x="1284" y="956" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 25px;fill: rgb(68%,45%,10%); stroke:none;" transform="translate(0,1912) scale(1,-1)">Sequence decoding</text>
+			<rect x="25" y="440" width="205" height="160" rx="10" ry="10" style="stroke: rgb(19%,36%,58%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(91%,94%,98%); fill-rule: evenodd;"/>
+			<polyline points="45 537, 62 537, 70 529, 70 503, 45 503, 45 537" style="stroke: rgb(19%,36%,58%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="62 537, 62 529, 70 529" style="stroke: rgb(19%,36%,58%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="51 522, 65 522" style="stroke: rgb(19%,36%,58%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="51 515, 65 515" style="stroke: rgb(19%,36%,58%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="51 508, 65 508" style="stroke: rgb(19%,36%,58%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="90" y="523.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(19%,36%,58%); stroke:none;" transform="translate(0,1046) scale(1,-1)">ATD input</text>
+			<text x="90" y="498.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,996) scale(1,-1)">Text and XML</text>
+			<text x="90" y="477.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,954) scale(1,-1)">25 Hz tracking</text>
+			<rect x="275" y="440" width="255" height="160" rx="10" ry="10" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<polyline points="291 532, 323 532" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="301" cy="532.0" r="3" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<polyline points="291 521, 323 521" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="313" cy="521.0" r="3" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<polyline points="291 509, 323 509" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="305" cy="509.0" r="3" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="340" y="523.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 25px;fill: rgb(15%,47%,41%); stroke:none;" transform="translate(0,1046) scale(1,-1)">Features</text>
+			<text x="340" y="498.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,996) scale(1,-1)">71 frame features</text>
+			<text x="340" y="477.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,954) scale(1,-1)">Geometry and motion</text>
+			<polyline points="230 520, 275 520" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="275 520, 265 515, 265 525" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="530 520, 550 520, 550 870" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="550 870, 550 169" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<rect x="600" y="832" width="250" height="78" rx="10" ry="10" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(94%,92%,98%); fill-rule: evenodd;"/>
+			<polyline points="632 884, 632 875, 620 875, 620 859" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="632 875, 645 875, 645 859" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="632" cy="884.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="620" cy="859.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="645" cy="859.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="665" y="874.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,1748) scale(1,-1)">Boosted tree</text>
+			<text x="665" y="849.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,1698) scale(1,-1)">Status classifier</text>
+			<rect x="600" y="722" width="250" height="78" rx="10" ry="10" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(94%,92%,98%); fill-rule: evenodd;"/>
+			<circle cx="618" cy="774.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="618" cy="749.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="633" cy="761.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="648" cy="774.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="648" cy="749.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<polyline points="618 774, 633 761" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="618 749, 633 761" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="648 774, 633 761" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="648 749, 633 761" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="665" y="764.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,1528) scale(1,-1)">GRU</text>
+			<text x="665" y="739.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,1478) scale(1,-1)">Seed 0</text>
+			<rect x="930" y="768" width="265" height="88" rx="10" ry="10" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<polyline points="946 827, 963 812, 980 812" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="946 797, 963 812" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="963" cy="812.0" r="4" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="995" y="815.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 22px;fill: rgb(15%,47%,41%); stroke:none;" transform="translate(0,1630) scale(1,-1)">Logit average</text>
+			<text x="995" y="790.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,1580) scale(1,-1)">Tree + seed-0 GRU</text>
+			<polyline points="550 871, 600 871" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="600 871, 590 866, 590 876" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="850 871, 930 812" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="930 812, 918.9843 813.9114, 924.9197 821.9594" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="550 761, 600 761" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="600 761, 590 756, 590 766" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="850 761, 930 812" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="930 812, 924.2555 802.4083, 918.8799 810.8406" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<rect x="600" y="487" width="250" height="78" rx="10" ry="10" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(94%,92%,98%); fill-rule: evenodd;"/>
+			<polyline points="632 539, 632 530, 620 530, 620 514" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="632 530, 645 530, 645 514" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="632" cy="539.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="620" cy="514.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="645" cy="514.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="665" y="529.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,1058) scale(1,-1)">Boosted tree</text>
+			<text x="665" y="504.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,1008) scale(1,-1)">Ownership classifier</text>
+			<polyline points="550 526, 600 526" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="600 526, 590 521, 590 531" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="850 526, 930 326" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="930 326, 921.6437 333.4278, 930.9285 337.1417" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<rect x="600" y="397" width="250" height="78" rx="10" ry="10" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(94%,92%,98%); fill-rule: evenodd;"/>
+			<circle cx="618" cy="449.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="618" cy="424.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="633" cy="436.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="648" cy="449.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="648" cy="424.0" r="4" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<polyline points="618 449, 633 436" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="618 424, 633 436" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="648 449, 633 436" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="648 424, 633 436" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="665" y="439.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,878) scale(1,-1)">Five GRUs</text>
+			<text x="665" y="414.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,828) scale(1,-1)">Seeds 0-4 averaged</text>
+			<polyline points="550 436, 600 436" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="600 436, 590 431, 590 441" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="850 436, 930 326" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="930 326, 920.0746 331.1465, 928.162 337.0282" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<rect x="600" y="307" width="250" height="78" rx="10" ry="10" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(94%,92%,98%); fill-rule: evenodd;"/>
+			<circle cx="632" cy="346.0" r="15" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<polyline points="632 356, 632 346, 640 343" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="665" y="349.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,698) scale(1,-1)">Long GRU</text>
+			<text x="665" y="324.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,648) scale(1,-1)">30 training epochs</text>
+			<polyline points="550 346, 600 346" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="600 346, 590 341, 590 351" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="850 346, 930 326" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="930 326, 919.0859 323.5746, 921.5113 333.2761" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<rect x="600" y="217" width="250" height="78" rx="10" ry="10" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(94%,92%,98%); fill-rule: evenodd;"/>
+			<polyline points="616 251, 621 251, 625 265, 631 243, 638 267, 643 251, 650 251" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="665" y="259.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,518) scale(1,-1)">TCN</text>
+			<text x="665" y="234.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,468) scale(1,-1)">Dilated convolutions</text>
+			<polyline points="550 256, 600 256" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="600 256, 590 251, 590 261" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="850 256, 930 326" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="930 326, 925.7668 315.6521, 919.1817 323.1778" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<rect x="600" y="127" width="250" height="78" rx="10" ry="10" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(94%,92%,98%); fill-rule: evenodd;"/>
+			<circle cx="619" cy="178.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="619" cy="166.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="619" cy="154.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="631" cy="178.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="631" cy="166.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="631" cy="154.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="643" cy="178.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="643" cy="166.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="643" cy="154.0" r="3" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<polyline points="619 178, 643 154" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="619 154, 643 178" style="stroke: rgb(44%,32%,64%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="665" y="169.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 23px;fill: rgb(44%,32%,64%); stroke:none;" transform="translate(0,338) scale(1,-1)">Transformer</text>
+			<text x="665" y="144.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,288) scale(1,-1)">Temporal attention</text>
+			<polyline points="550 166, 600 166" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="600 166, 590 161, 590 171" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<polyline points="850 166, 930 326" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="930 326, 930 314.8197, 921.0557 319.2918" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<rect x="930" y="278" width="265" height="96" rx="10" ry="10" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<polyline points="946 341, 963 326, 980 326" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="946 311, 963 326" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="963" cy="326.0" r="4" style="stroke: rgb(15%,47%,41%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="995" y="329.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 22px;fill: rgb(15%,47%,41%); stroke:none;" transform="translate(0,658) scale(1,-1)">Logit average</text>
+			<text x="995" y="304.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,608) scale(1,-1)">Five groups</text>
+			<text x="995" y="283.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,566) scale(1,-1)">Equal weights</text>
+			<rect x="1290" y="762" width="309" height="100" rx="10" ry="10" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(100%,95%,87%); fill-rule: evenodd;"/>
+			<polyline points="1306 802, 1315 802, 1315 821, 1330 821, 1330 802, 1340 802" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="1306" cy="802.0" r="3" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="1315" cy="821.0" r="3" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="1330" cy="802.0" r="3" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="1355" y="815.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 24px;fill: rgb(68%,45%,10%); stroke:none;" transform="translate(0,1630) scale(1,-1)">Live / dead</text>
+			<text x="1355" y="790.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,1580) scale(1,-1)">Viterbi decoder</text>
+			<text x="1355" y="769.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,1538) scale(1,-1)">Switch cost 30</text>
+			<rect x="1290" y="276" width="309" height="100" rx="10" ry="10" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(100%,95%,87%); fill-rule: evenodd;"/>
+			<polyline points="1306 316, 1315 316, 1315 335, 1330 335, 1330 316, 1340 316" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<circle cx="1306" cy="316.0" r="3" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="1315" cy="335.0" r="3" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<circle cx="1330" cy="316.0" r="3" style="stroke: rgb(68%,45%,10%); stroke-linecap: butt; stroke-width: 2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="1355" y="329.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 24px;fill: rgb(68%,45%,10%); stroke:none;" transform="translate(0,658) scale(1,-1)">Home / away</text>
+			<text x="1355" y="304.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,608) scale(1,-1)">Viterbi decoder</text>
+			<text x="1355" y="283.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,566) scale(1,-1)">Switch cost 6</text>
+			<polyline points="1195 812, 1290 812" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="1290 812, 1280 807, 1280 817" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<text x="1209.9814453125" y="829" style="font-family: Arial, Helvetica, sans-serif; font-size: 18px;fill: rgb(33%,40%,47%); stroke:none;" transform="translate(0,1658) scale(1,-1)">P(dead)</text>
+			<polyline points="1195 326, 1290 326" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="1290 326, 1280 321, 1280 331" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<text x="1207.48974609375" y="343" style="font-family: Arial, Helvetica, sans-serif; font-size: 18px;fill: rgb(33%,40%,47%); stroke:none;" transform="translate(0,686) scale(1,-1)">P(home)</text>
+			<polyline points="1444 762, 1444 376" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="1444 376, 1439 386, 1449 386" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<text x="1457" y="571" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 20px;fill: rgb(68%,45%,10%); stroke:none;" transform="translate(0,1142) scale(1,-1)">Live</text>
+			<text x="1457" y="543" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 20px;fill: rgb(68%,45%,10%); stroke:none;" transform="translate(0,1086) scale(1,-1)">intervals</text>
+			<rect x="1680" y="428" width="250" height="162" rx="10" ry="10" style="stroke: rgb(29%,48%,25%); stroke-linecap: butt; stroke-width: 1.8; fill: rgb(91%,95%,91%); fill-rule: evenodd;"/>
+			<polyline points="1700 526, 1717 526, 1725 518, 1725 492, 1700 492, 1700 526" style="stroke: rgb(29%,48%,25%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="1717 526, 1717 518, 1725 518" style="stroke: rgb(29%,48%,25%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="1706 511, 1720 511" style="stroke: rgb(29%,48%,25%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="1706 504, 1720 504" style="stroke: rgb(29%,48%,25%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="1706 497, 1720 497" style="stroke: rgb(29%,48%,25%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<text x="1745" y="512.0" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 24px;fill: rgb(29%,48%,25%); stroke:none;" transform="translate(0,1024) scale(1,-1)">Frame labels</text>
+			<text x="1745" y="487.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,974) scale(1,-1)">H / A / D / X</text>
+			<text x="1745" y="466.0" style="font-family: Arial, Helvetica, sans-serif; font-size: 17px;fill: rgb(12%,20%,29%); stroke:none;" transform="translate(0,932) scale(1,-1)">199,319 CSV rows</text>
+			<polyline points="1599 812, 1650 812, 1650 550, 1680 550" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="1680 550, 1670 545, 1670 555" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<text x="1640" y="829" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 20px;fill: rgb(68%,45%,10%); stroke:none;" transform="translate(0,1658) scale(1,-1)">D</text>
+			<polyline points="1599 326, 1650 326, 1650 470, 1680 470" style="stroke: rgb(44%,50%,58%); stroke-linecap: butt; stroke-width: 2.2; fill: None; fill-rule: evenodd;"/>
+			<polygon points="1680 470, 1670 465, 1670 475" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(44%,50%,58%); fill-rule: evenodd;"/>
+			<text x="1640" y="295" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 20px;fill: rgb(68%,45%,10%); stroke:none;" transform="translate(0,590) scale(1,-1)">H / A</text>
+			<text x="1696.705078125" y="380" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px;fill: rgb(33%,40%,47%); stroke:none;" transform="translate(0,760) scale(1,-1)">X outside graded halves</text>
+		</g>
+	</g>
+</svg>
